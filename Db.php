@@ -9,6 +9,7 @@ namespace Netesy\Gringotts;
  * 
  * 
  */
+
 class Db
 {
 	/**

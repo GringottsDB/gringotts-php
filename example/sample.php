@@ -354,18 +354,18 @@ echo "\n";
  * Distinct
  */
 echo "Distinct Example\n";
-echo "================================================================================\n";
+echo "================================================================================\n\n";
 print_r($db->staff->read()->distinct('postcode'));
 echo "\n";
 
 /*
  * Sorting examples.
  */
-echo "Sorting Example\n";
-echo "================================================================================\n";
+echo "Sorting Example\n\n";
+echo "================================================================================\n\n";
 print_r($db->staff->read()->sort(['name' => 1]));
 echo "\n";
 
 // Delete everything again
-$db->delete();
+//$db->delete();
 
