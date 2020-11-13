@@ -121,15 +121,10 @@ abstract class Driver
 	 */
 	public function setPath($value)
 	{
-		$value = dirname($value);
 		// Does the path exist
 		if (!is_dir($value))
 		{
-			if(! mkdir($value)){
-				var_dump($value);
-				throw new \Exception('Database path does not exist!');
-			}
-
+			throw new \Exception('Database path does not exist!');
 		}
 		
 		// Can we write to it
@@ -162,7 +157,7 @@ abstract class Driver
 	 * Returns:
 	 * -------------------------------------------------------------------------
 	 * n/a
-	 **/
+	 */
 	private function setIdFile()
 	{
 		// Create the .counters dir if it doesn't exist
