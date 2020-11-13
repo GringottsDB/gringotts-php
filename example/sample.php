@@ -1,4 +1,4 @@
-?php
+<?php
 
 
 /*
@@ -16,7 +16,7 @@ require('../Backends/Driver.php');
 require('../Backends/Json.php');
 
 // To create or connect to an existing database.
-$db = new Netesy\Gringotts\Db('/tmp/gringotts-test');
+$db = new Netesy\Gringotts\Db('/gringotts-test');
 
 /**
  * Section: CREATE
@@ -368,20 +368,4 @@ echo "\n";
 
 // Delete everything again
 $db->delete();
-About
-A NoSQL Database, with the portability of SQLite
 
-Topics
-Resources
- Readme
-License
- MIT License
-Releases
-No releases published
-Create a new release
-Packages
-No packages published
-Publish your first package
-Languages
-PHP
-100.0%
