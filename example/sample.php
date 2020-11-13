@@ -16,7 +16,7 @@ require('../Backends/Driver.php');
 require('../Backends/Json.php');
 
 // To create or connect to an existing database.
-$db = new Netesy\Gringotts\Db('/gringotts-test');
+$db = new Netesy\Gringotts\Db("./tmp/gringotts-test");
 
 /**
  * Section: CREATE
