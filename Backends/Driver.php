@@ -125,9 +125,7 @@ abstract class Driver
 		// Does the path exist
 		if (!is_dir($value))
 		{
-			if(! mkdir($value)){
 				throw new \Exception('Database path does not exist!');
-			}
 
 		}
 		
