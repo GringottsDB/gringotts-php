@@ -31,7 +31,7 @@ Once you have the src included in your project you can use it like this:
 
 
 /*
- * This script is used as an example of how to use the NoSqLite component.
+ * This script is used as an example of how to use the Gringotts Database component.
  * Where appropriate the following examples have the SQL that you may have
  * written to do the same thing.
  */
