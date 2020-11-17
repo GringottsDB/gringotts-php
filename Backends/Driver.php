@@ -121,11 +121,12 @@ abstract class Driver
 	 */
 	public function setPath($value)
 	{
-		$value = dirname($value);
 		// Does the path exist
 		if (!is_dir($value))
 		{
+			if(!mkdir($value)){
 				throw new \Exception('Database path does not exist!');
+			}
 
 		}
 		
@@ -225,46 +226,13 @@ abstract class Driver
 		}
 		else
 		{
+			$host = gethostname();
+			$ip = gethostbyname($host);
 			// Running CLI
 			if(stristr(PHP_OS, 'WIN'))
 			{
-				//  Rather hacky way to handle windows servers
-				exec('ipconfig /all', $catch);
-				foreach($catch as $line)
-				{
-					if(eregi('IP Address', $line))
-					{
-						// Have seen exec return "multi-line" content, so another hack.
-						if(count($lineCount = split(':', $line)) == 1)
-						{
-							list($t, $ip) = split(':', $line);
-							$ip = trim($ip);
-						}
-						else
-						{
-							$parts = explode('IP Address', $line);
-							$parts = explode('Subnet Mask', $parts[1]);
-							$parts = explode(': ', $parts[0]);
-							$ip = trim($parts[1]);
-						}
-						
-						if(ip2long($ip > 0))
-						{
-							echo 'IP is '.$ip."\n";
-							return $ip;
-						}
-						else
-						{
-							// TODO: Setup a new configurable property to allow
-							// us to manually set the IP address
-							throw new \Exception
-							(
-								'IP Address could not be determined '.
-								'automatically, please set this manually.'
-							);
-						}
-					}
-				}
+				 exec('ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk \'{print $2}\'|tr -d "addr:"',$arr);
+    				return $arr;
 			}
 			else
 			{

@@ -1,6 +1,7 @@
 <?php
 
 namespace Netesy\Gringotts\Backends;
+
 // use Netesy\Gringotts\Driver;
 
 /**

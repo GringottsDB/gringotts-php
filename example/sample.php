@@ -1,6 +1,6 @@
 <?php
 
-
+// namespace Netesy\Gringotts;
 /*
  * This script is used as an example of how to use the Gringotts Database component.
  * Where appropriate the following examples have the SQL that you may have
@@ -9,14 +9,12 @@
 
 // Load our classes - note we not actually using composer
 // for this example, hence these manual require statements.
-require('../Db.php');
-require('../Collection.php');
-require('../Result.php');
-require('../Backends/Driver.php');
-require('../Backends/Json.php');
+require('../Autoload.php');
 
+use Netesy\Gringotts\Backends\JsonComp;
 // To create or connect to an existing database.
-$db = new Netesy\Gringotts\Db("./tmp/gringotts-test");
+$driver = new JsonComp();
+$db = new Netesy\Gringotts\Db("/tmp/gringotts-test", $driver);
 
 /**
  * Section: CREATE

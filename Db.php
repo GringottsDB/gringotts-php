@@ -53,7 +53,6 @@ class Db
 	{
 		// Set the rootpath
 		$this->rootpath = $path;
-		
 		// Do we have a custom backend
 		if ($backend == null)
 		{
@@ -77,6 +76,7 @@ class Db
 		
 		// Okay we have a backend, lets set the path to the data.
 		$this->backend->setPath($this->rootpath);
+		var_dump($this->backend);
 	}
 	
 	/**
