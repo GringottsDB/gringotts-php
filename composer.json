@@ -6,11 +6,10 @@
 	"license": "MIT",
 	"require":
 	{
-		"php": ">=7.2",
+		"php": ">=7.2"
 	},
 	"autoload":
 	{
 		"psr-4": { "Netesy\\Gringotts;\\": "" }
-	},
-	"suggest": { "gears/arrays": "You will be dealing with arrays lots so why not make your job a little easier." }
+	}
 }
